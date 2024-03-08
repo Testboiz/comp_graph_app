@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import '../custom_theme/custom_theme.dart';
 
@@ -56,6 +58,55 @@ class _CanvasPageWidgetState extends State<CanvasPageWidget> {
           top: true,
           child: SizedBox(
             height: MediaQuery.of(context).size.height,
+            child: Column(children: [
+              Row(
+                children: [
+                  Image.network(
+                            'https://picsum.photos/seed/261/600',
+                            fit: BoxFit.cover,
+                            height: 300,
+                            width: 300,
+                          ),
+                          IconButton(
+                            onPressed: (){
+                              // buat logic upload gambar banh
+                            }, 
+                            icon: const Icon(Icons.add),
+                            style: const ButtonStyle(
+                              backgroundColor: MaterialStatePropertyAll(
+                                Colors.white
+                                )
+                              ),
+                            )
+                          ],
+                  ),
+                  const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Hasil pemisahan RGB",
+                    ),
+                  )
+                  ,
+                Image.network(
+                  'https://picsum.photos/seed/261/600',
+                  fit: BoxFit.cover,
+                  height: 300,
+                  width: 300,
+                ),
+                Image.network(
+                  'https://picsum.photos/seed/261/600',
+                  fit: BoxFit.cover,
+                  height: 300,
+                  width: 300,
+                ),
+                Image.network(
+                  'https://picsum.photos/seed/261/600',
+                  fit: BoxFit.cover,
+                  height: 300,
+                  width: 300,
+                ),
+              ],
+            )
           )
         ),
       );

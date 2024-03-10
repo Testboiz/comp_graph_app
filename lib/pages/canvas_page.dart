@@ -43,12 +43,12 @@ class _CanvasPageWidgetState extends State<CanvasPageWidget> {
             },
         ),
           title: const Text(
-            'Nama Praktikum',
+            'Praktikum : Pemisahan Warna RGB',
             style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: Colors.white,
-                  fontSize: 22,
-                ),
+              fontFamily: 'Outfit',
+              color: Colors.white,
+              fontSize: 22,
+            ),
           ),
           actions: const [],
           centerTitle: false,
@@ -58,57 +58,164 @@ class _CanvasPageWidgetState extends State<CanvasPageWidget> {
           top: true,
           child: SizedBox(
             height: MediaQuery.of(context).size.height,
-            child: Column(children: [
-              Row(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Image.network(
-                            'https://picsum.photos/seed/261/600',
-                            fit: BoxFit.cover,
-                            height: 300,
-                            width: 300,
-                          ),
-                          IconButton(
-                            onPressed: (){
-                              // buat logic upload gambar banh
-                            }, 
-                            icon: const Icon(Icons.add),
-                            style: const ButtonStyle(
-                              backgroundColor: MaterialStatePropertyAll(
-                                Colors.white
-                                )
+                Row(
+                  children: [
+                      Card(
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        color: CustomStyle.primaryBackground,
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.network(
+                                'https://picsum.photos/seed/173/600',
+                                width: 300,
+                                height: 300,
+                                fit:BoxFit.fill
                               ),
-                            )
+                            ),
+                            Text(
+                              'Gambar Input',
+                              textAlign: TextAlign.center,
+                              style: CustomStyle.bodyMedium,
+                            ),
                           ],
-                  ),
-                  const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Hasil pemisahan RGB",
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: (){
+                          // buat logic upload gambar banh
+                        }, 
+                        icon: const Icon(Icons.add),
+                        padding: EdgeInsets.zero,
+                        style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                            Colors.white
+                            )
+                          ),
+                        )
+                      ],
                     ),
-                  )
-                  ,
-                Image.network(
-                  'https://picsum.photos/seed/261/600',
-                  fit: BoxFit.cover,
-                  height: 300,
-                  width: 300,
-                ),
-                Image.network(
-                  'https://picsum.photos/seed/261/600',
-                  fit: BoxFit.cover,
-                  height: 300,
-                  width: 300,
-                ),
-                Image.network(
-                  'https://picsum.photos/seed/261/600',
-                  fit: BoxFit.cover,
-                  height: 300,
-                  width: 300,
-                ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Hasil pemisahan RGB",
+                          style: CustomStyle.bodyMedium,
+                        ),
+                      ),
+                    ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Wrap(
+                      children: [
+                        Card(
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          color: CustomStyle.primaryBackground,
+                          elevation: 4,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image.network(
+                                  'https://picsum.photos/seed/173/600',
+                                  width: 300,
+                                  height: 300,
+                                  fit:BoxFit.fill
+                                ),
+                              ),
+                              Text(
+                                'Komponen Merah',
+                                textAlign: TextAlign.center,
+                                style: CustomStyle.bodyMedium,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          color: CustomStyle.primaryBackground,
+                          elevation: 4,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image.network(
+                                  'https://picsum.photos/seed/173/600',
+                                  width: 300,
+                                  height: 300,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Text(
+                                'Komponen Hijau',
+                                textAlign: TextAlign.center,
+                                style: CustomStyle.bodyMedium,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          color: CustomStyle.primaryBackground,
+                          elevation: 4,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image.network(
+                                  'https://picsum.photos/seed/173/600',
+                                  width: 300,
+                                  height: 300,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Text(
+                                'Komponen Biru',
+                                textAlign: TextAlign.center,
+                                style: CustomStyle.bodyMedium,
+                              ),
+                            ],
+                          ),
+                        ),
+                    ],
+                  ),
+                )
               ],
+                        ),
             )
-          )
-        ),
-      );
+        )
+      ),
+    );
   }
 }

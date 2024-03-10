@@ -50,17 +50,13 @@ class _CanvasPageWidgetState extends State<CanvasPageWidget> {
               fontSize: 22,
             ),
           ),
-          actions: const [],
           centerTitle: false,
           elevation: 2,
         ),
         body: SafeArea(
           top: true,
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height,
             child: SingleChildScrollView(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                 Row(
                   children: [
@@ -98,7 +94,6 @@ class _CanvasPageWidgetState extends State<CanvasPageWidget> {
                           // buat logic upload gambar banh
                         }, 
                         icon: const Icon(Icons.add),
-                        padding: EdgeInsets.zero,
                         style: const ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll(
                             Colors.white
@@ -119,7 +114,7 @@ class _CanvasPageWidgetState extends State<CanvasPageWidget> {
                     ),
                   Align(
                     alignment: Alignment.centerLeft,
-                    child: Wrap(
+                    child: Row(
                       children: [
                         Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -212,9 +207,8 @@ class _CanvasPageWidgetState extends State<CanvasPageWidget> {
                   ),
                 )
               ],
-                        ),
-            )
-        )
+            ),
+          )
       ),
     );
   }

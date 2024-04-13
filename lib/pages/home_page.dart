@@ -25,7 +25,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: CustomStyle.primaryBackground,
       appBar: AppBar(
         backgroundColor: CustomStyle.primary,
         automaticallyImplyLeading: false,

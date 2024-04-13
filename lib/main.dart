@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graphics/pages/canvas_page.dart';
 import 'package:graphics/pages/markdown_page.dart';
+import 'package:graphics/pages/canvas_page_main.dart';
 import 'pages/home_page.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MainApp extends StatelessWidget {
       routes: {
         '/': (context) => const HomePageWidget(),
         '/MarkdownPage': (context) => const MarkdownPageWidget(),
-        '/CanvasPage': (context) => const CanvasPageWidget(),
+        '/CanvasPage': (context) => const CanvasMainPage(),
       },
     );
   }

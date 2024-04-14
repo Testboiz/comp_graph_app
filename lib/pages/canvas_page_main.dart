@@ -28,21 +28,40 @@ class _CanvasMainPageState extends State<CanvasMainPage> {
 }
 
 class MyPainter extends CustomPainter {
+  // Cascade operator
+  // instead of
+  // Paint().color =
+  // Paint().strokeWidth =
+  // Paint().strokeCap =
+  // it coule be like the bottom
+  // TODO : use colorpicker values
+  var pen = Paint()
+    ..color = Colors.black
+    ..strokeWidth = 1
+    ..strokeCap = StrokeCap.round;
+  // or even
+  // MyClass..doStuff1()..doStuff2().. etc
+
   @override
-  void paint(Canvas canvas, Size size) {
-    // Cascade operator
-    // instead of
-    // Paint().color =
-    // Paint().strokeWidth =
-    // Paint().strokeCap =
-    // it coule be like the bottomQ
-    var paint = Paint()
-      ..color = Colors.blue
-      ..strokeWidth = 5
-      ..strokeCap = StrokeCap.round;
-    // or even
-    // MyClass..doStuff1()..doStuff2().. etc
-    canvas.drawLine(const Offset(0, 0), const Offset(100, 100), paint);
+  void paint(Canvas canvas, Size size) {}
+
+  void clear(Canvas canvas, Size size) {
+    var xyAxisPath = Path()
+      ..moveTo(size.width / 2, 0)
+      ..lineTo(size.width / 2, size.height)
+      ..moveTo(0, size.height / 2)
+      ..lineTo(size.width, size.height / 2);
+
+    canvas.drawColor(Colors.white, BlendMode.color);
+    canvas.drawPath(xyAxisPath, pen);
+  }
+
+  void drawLine(Canvas canvas, double x1, double y1, double x2, double y2) {
+    var path = Path()
+      ..moveTo(x1, y1)
+      ..lineTo(x2, y2);
+
+    canvas.drawPath(path, pen);
   }
 
   @override

@@ -10,6 +10,11 @@ class CanvasMainPage extends StatefulWidget {
 
 class _CanvasMainPageState extends State<CanvasMainPage> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.ltr,
@@ -20,7 +25,10 @@ class _CanvasMainPageState extends State<CanvasMainPage> {
             title: const Text("Praktikum : Penggambaran dan Algoritma Garis")),
         body: CustomPaint(
           painter: MyPainter(),
-          child: Container(),
+          child: Container(
+            margin: const EdgeInsets.all(10),
+            decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+          ),
         ),
       ),
     );
@@ -56,7 +64,9 @@ class MyPainter extends CustomPainter {
     canvas.drawPath(xyAxisPath, pen);
   }
 
-  void drawLine(Canvas canvas, double x1, double y1, double x2, double y2) {
+  void drawLine(
+      Canvas canvas, double x1, double y1, double x2, double y2, Size size) {
+    // TODO : handle oob and NaN situation
     var path = Path()
       ..moveTo(x1, y1)
       ..lineTo(x2, y2);
@@ -65,5 +75,5 @@ class MyPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
